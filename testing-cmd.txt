@@ -1,0 +1,29 @@
+Type Four Commands in Seperate Terminals:
+> node consumer.js odd
+> node consumer.js odd
+> node consumer.js even
+> node publisher.js 1,2,3,4,5
+
+
+
+Expected Output:
+> node publisher.js 1,2,3,4,5
+Start publishing
+Publishing number: 1 to queueName: odd
+Publishing number: 2 to queueName: even
+Publishing number: 3 to queueName: odd
+Publishing number: 4 to queueName: even
+
+> node consumer.js odd
+Waiting for messages from queueName: odd
+Recieved number: 1 from queueName: odd
+Recieved number: 5 from queueName: odd
+
+> node consumer.js odd
+Waiting for messages from queueName: odd
+Recieved number: 3 from queueName: odd
+
+> node consumer.js even
+Waiting for messages from queueName: even
+Recieved number: 2 from queueName: even
+Recieved number: 4 from queueName: even
